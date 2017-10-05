@@ -1,0 +1,54 @@
+<!--HTML-->
+
+<h1>Exercício 1</h1>
+
+<h2>Verifique Aprovação</h2>
+
+<form onsubmit="return validaNota()">
+    <label>Nota 1: </label>
+    <input id="nota1" type="text"><br>
+    <label>Nota 2: </label>
+    <input id="nota2" type="text"><br>
+    <label>Nota 3:</label>
+    <input id="nota3" type="text"><br>
+    <button type="submit">Verificar</button><br>
+    <p id="resultado"></p>
+</form>
+
+
+<!-- JAVASCRIPT-->
+
+<script>
+    function validaNota() {
+        //entrada
+        var nota1, nota2, nota3;
+        nota1 = parseInt(nota1);
+        nota2 = parseInt(nota2);
+        nota3 = parseInt(nota3);
+        var media;
+        var inputNota1 = document.getElementById("nota1");
+        var nota1 = inputNota1.value;
+        var inputNota2 = document.getElementById("nota2");
+        var nota2 = inputNota2.value;
+        var inputNota3 = document.getElementById("nota3");
+        var nota3 = inputNota3.value;
+        var resultado = document.getElementById("resultado");
+
+
+        //decisão
+        if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+            alert("Digite somente números!");
+        } else if (nota1 == "" || nota2 == "" || nota3 == "") {
+            alert("É necessário o preenchimento de todos os campos");
+        }
+        else {
+            media = (nota1 + nota2 + nota3) / 3;
+            resultado = ("A media é" + media);
+        }
+
+        //processamento
+
+    }
+        //saída
+
+</script>

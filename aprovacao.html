@@ -21,17 +21,14 @@
 <script>
     function validaNota() {
         //entrada
-        var nota1, nota2, nota3;
-        nota1 = parseInt(nota1);
-        nota2 = parseInt(nota2);
-        nota3 = parseInt(nota3);
+        var nota1 = document.getElementById("nota1").value;
+        var nota2 = document.getElementById("nota2").value;
+        var nota3 = document.getElementById("nota3").value;
+        nota1 = parseFloat(nota1);
+        nota2 = parseFloat(nota2);
+        nota3 = parseFloat(nota3);
         var media;
-        var inputNota1 = document.getElementById("nota1");
-        var nota1 = inputNota1.value;
-        var inputNota2 = document.getElementById("nota2");
-        var nota2 = inputNota2.value;
-        var inputNota3 = document.getElementById("nota3");
-        var nota3 = inputNota3.value;
+
         var resultado = document.getElementById("resultado");
 
 

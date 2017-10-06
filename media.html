@@ -1,24 +1,47 @@
 <!-- HTML -->
 <h1>Exercício Média</h1>
-
+<form onsubmit="return calcular()">
+<label> Digite o n1 </label><br><br>
+<input type="text" id="n1"><br><br>
+<label> Digite o n2 </label><br><br>
+<input type="text" id="n2"><br><br>
+<label>Digite o n3</label><br><br>
+<input type="text" id="n3"><br><br>
+<button>Calcular</button> <br>
+<p id="texto"></p>
+</form>
 <!-- JAVASCRIPT -->
 <script>
-    //entrada
-    var n1 = prompt("Digite o n1");
-    var n2 = prompt("Digite o n2");
-    var n3 = prompt("Digite o n3");
-    
-    //processamento
-    n1 = parseInt(n1);
-    n2 = parseInt(n2);
-    n3 = parseInt(n3);
 
-    if(isNaN(n1) || isNaN(n2) || isNaN(n3)){
-        alert("Digite somente números!");
-    }else{
-        var media = (n1 + n2 + n3) / 3;
-        //saída
-        alert("A média é: " + media);
-    }
+    function calcular(){
+    //entrada
+    var n1 = document.getElementById("n1").value;
+    var n2 = document.getElementById("n2").value;
+    var n3 = document.getElementById("n3").value;
+    var alerta = document.getElementById("texto");
+      
+    //processamento
+    n1 = parseFloat(n1);
+    n2 = parseFloat(n2);
+    n3 = parseFloat(n3);
+    validacaoNotas(n1, n2, n3);
+    var resultado = calcularMedia(n1, n2, n3);
+    alerta.textContent = "A média é " + resultado;
+
+    return false;
  
+    } 
+    function validacaoNotas(n1, n2, n3){
+        if(isNaN(n1) || isNaN(n2) || isNaN(n3)){
+            alerta.textContent = "Digite somente números!";
+        }else if ((n1 == "") || (n2 == "") || (n3 == "")) {
+            alerta.textContent = "Preencha todos os campos";
+        }
+    }
+    function calcularMedia(n1, n2, n3){
+        var media = (n1 + n2 + n3) / 3;
+        return media;
+    }
+
+  
 </script>

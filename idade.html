@@ -1,17 +1,39 @@
+<!--HTML-->
+    <label>Digite o ano atual</label>
+    <input type="text" id="ano"> <br><br>
+
+    <label>Digite sua idade:</label>
+    <input type="text" id="idade"> <br><br>
+
+    <button id="submit" type="submit" onclick="calculo()">Calcula Ano</button>
+
+    <p id="informacao"></p>
+
+<!--JAVASCRIPT-->
 <script>
+    function calculaAno(ano, idade) {
+        return ano - idade;
+    }
+
+    function calculo(){
     //entrada
-    var atual = 2017;
-    var idade = prompt("idade");
+    var ano = document.getElementById("ano").value;
+    var idade = document.getElementById("idade").value;
+    var informacao = document.getElementById("informacao");
 
     //processamento
-    idade = parseInt(idade);
 
-    if (!isNaN){
-        var nascimento = atual - idade;
+    if (isNaN(ano) || isNaN(idade)){
+        informacao.textContent = "Digite somente números!";
+    }else if (ano == "" || idade ==""){ 
+        informacao.textContent = "Preencha os dois campos";
+    } 
+    else {
+        var nascimento = calculaAno(ano, idade);
         //saída
-        alert ("O ano de nascimento é: " + nascimento);
-    }else{
-        alert("Digite somente números!");
+        informacao.textContent = "O ano de nascimento é: " + nascimento;
     }
-    
+
+     
+}
 </script>
